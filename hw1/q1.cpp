@@ -24,5 +24,58 @@ Sample Input：
 
 Sample Output：
 1
+
+Sample Input:
+5        
+1 1 1 0 0
+1 1 0 1 0
+1 0 1 0 0
+0 1 0 1 0
+0 0 0 0 1
+
+Sample Output:
+2
 Limitation: 1<=n<=200
 */
+#include <iostream>
+#include <stdio.h>
+#include <vector>
+using namespace std;
+
+void dfs(vector<bool> &visited, vector<vector<int>>friendships, int index) {
+    for (int i = 0; i < visited.size(); i++) {
+        if (i == index || visited[i]) continue;
+        if (friendships[index][i]) {
+            visited[i] = true;
+            dfs(visited, friendships, i);
+        }
+    }
+}
+
+int circles(vector<vector<int>> friendships) {
+    int ans = 0;
+    vector<bool> visited(friendships.size(), false);
+    for (int i = 0; i < friendships.size(); i++) {
+        if (!visited[i]) {
+            visited[i] = true;
+            ans++;
+            dfs(visited, friendships, i);
+        }
+    }
+    return ans;
+}
+
+int main(void) {
+    int n;
+    cin >> n;
+    vector<vector<int>> friendships(n);
+    for (int i = 0; i < n; i++) {
+        vector<int> row(n);
+        for (int j = 0; j < n; j++) {
+            cin >> row[j];
+        }
+        friendships[i] = row;
+    }
+    cout << circles(friendships);
+    return 0;
+}

@@ -46,3 +46,48 @@ assending order, the last one 10011 is the 19th number. Thus it is the answer.
 Notes：
 1<=n<=31
 */
+#include <iostream>
+#include <iomanip>
+#include <stdio.h>
+#include <vector>
+#include <algorithm>
+using namespace std;
+
+int N, L, idx;
+
+bool ones(string s) {
+    int count = 0;
+    for (int i = 0; i < s.size(); i++) {
+        if (s[i] == '1') {
+            count++;
+        }
+        if (count > L) {
+            return false;
+        }
+    }
+    return true;
+}
+
+int main(void) {
+    cin >> N >> L >> idx; 
+    string s = string(N,'0');
+    for (int i = 0;; i++) {
+        if (ones(s)) {
+            idx--;
+        }
+        if (idx == 0) {
+            break;
+        }
+        // compute next binary number
+        for (int j = N-1; j >= 0; j--) {
+            if (s[j] == '0') {
+                s[j] = '1';
+                break;
+            } else {
+                s[j] = '0';
+            }
+        }
+    }
+    cout << s;
+    return 0;
+}

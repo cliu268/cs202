@@ -26,3 +26,44 @@ n<=1000
 ti<=1e6，ti can repeat
 When ti is repeated, see the input order (sort is available).
 */
+#include <iostream>
+#include <iomanip>
+#include <stdio.h>
+#include <vector>
+#include <algorithm>
+using namespace std;
+
+bool cmp(pair<int, int>& a,
+         pair<int, int>& b)
+{
+    if (a.second == b.second) {
+        return a.first < b.first;
+    }
+    return a.second < b.second;
+}
+
+int main(void) {
+    // freopen("q3.in", "r", stdin);
+    // freopen("q3.out", "w", stdout);
+
+    int n;
+    cin >> n;
+    vector<pair<int, int>> input(n);
+    for (int i = 0; i < n; i++) {
+        int t;
+        cin >> t;
+        input[i] = {i, t};
+    }
+    sort(input.begin(), input.end(), cmp);
+    int sum = 0;
+    double total = 0;
+    for (int i = 0; i < n; i++) {
+        cout << input[i].first + 1 << ' ';
+        if (i > 0) {
+            sum += input[i-1].second;
+        }
+        total += sum;
+    }
+    cout << '\n' << fixed << setprecision(2) << total/n;  // use fixed and setprecision to cout decimals and #include <iomanip>
+    return 0;
+}
