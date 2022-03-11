@@ -19,3 +19,22 @@ sample input
 sample output
 30 1 34 5 23 65 3
 */
+#include <iostream>
+#include <stdio.h>
+#include <stack>
+using namespace std;
+
+int main(void) {
+    stack<int> s;
+    int input = 0;
+    cin >> input;
+    while (input) {
+        s.push(input);
+        cin >> input;
+    }
+    while (!s.empty()) {
+        cout << s.top() << " ";
+        s.pop();
+    }
+    return 0;
+}

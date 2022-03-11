@@ -50,3 +50,45 @@ Sample output
 Data range
 N≤200000,X≤108
 */
+#include <iostream>
+#include <stdio.h>
+#include <algorithm>
+#include <stack>
+#include <vector>
+using namespace std;
+
+int main(void) {
+    stack<int> s;
+    vector<int> ans;
+    int n = 0;
+    cin >> n;
+    while(n--) {
+        int op = 0;
+        cin >> op;
+        if (op == 0) {
+            int w = 0;
+            cin >> w;
+            s.push(w);
+        } else if (op == 1) {
+            s.pop();
+        } else {
+            stack<int> temp;
+            int maxw = 0;
+            while (!s.empty()) {
+                maxw = max(maxw, s.top());
+                temp.push(s.top());
+                s.pop();
+            }
+            while (!temp.empty()) {
+                s.push(temp.top());
+                temp.pop();
+            }
+            ans.push_back(maxw);
+        }
+    }
+    for (int i = 0; i < ans.size(); i++) {
+        cout << ans[i] << '\n';
+    }
+
+    return 0;
+}
