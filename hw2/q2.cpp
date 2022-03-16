@@ -60,6 +60,7 @@ using namespace std;
 int main(void) {
     stack<int> s;
     vector<int> ans;
+    int maxi = 0;
     int n = 0;
     cin >> n;
     while(n--) {
@@ -68,22 +69,25 @@ int main(void) {
         if (op == 0) {
             int w = 0;
             cin >> w;
-            s.push(w);
+            if (w <= maxi) {
+                s.push(w);
+            } else {
+                s.push(2*w - maxi); // push 2w - max to the stack
+                maxi = w;
+            }
         } else if (op == 1) {
+            if (s.empty()) continue;
+            int top = s.top();
+            if (s.top() > maxi) {
+                maxi = 2*maxi - top; // reset maxi to 2*max - top
+            }
             s.pop();
         } else {
-            stack<int> temp;
-            int maxw = 0;
-            while (!s.empty()) {
-                maxw = max(maxw, s.top());
-                temp.push(s.top());
-                s.pop();
+            if (s.empty()) {
+                ans.push_back(0);
+            } else {
+                ans.push_back(maxi);
             }
-            while (!temp.empty()) {
-                s.push(temp.top());
-                temp.pop();
-            }
-            ans.push_back(maxw);
         }
     }
     for (int i = 0; i < ans.size(); i++) {
@@ -92,3 +96,39 @@ int main(void) {
 
     return 0;
 }
+
+// ETAW solution using printf and scanf instead of cin and cout
+/*
+#include <bits/stdc++.h>
+using namespace std;
+   
+int main() {
+  int n; scanf("%d", &n);
+  stack<int> maxi;
+  for (int i=0; i<n; i++) {
+    int x; scanf("%d", &x);
+    if (x==0) {
+      int y; scanf("%d", &y);
+      if (!maxi.empty()) {
+        maxi.push(max(maxi.top(), y));
+      }
+      else if (maxi.empty()) {
+        maxi.push(y);
+      }
+    }
+    if (x==1) {
+      if (!maxi.empty()) {
+        maxi.pop();
+      }
+    }
+    if (x==2) {
+      if (maxi.empty()) {
+        cout<<0<<"\n";
+        continue;
+      }
+      printf("%d", maxi.top());
+      printf("\n");
+    }
+  }
+}
+*/
