@@ -27,3 +27,47 @@ time limit:
 Memory limit:
 64M
 */
+#include <iostream>
+#include <stdio.h>
+#include <vector>
+using namespace std;
+
+int main(void) {
+    int n, m;
+    scanf("%d %d", &n, &m);
+    vector<int> v1(n);
+    vector<int> v2(m);
+    vector<int> v3(n+m);
+    for (int i = 0; i < n; i++) {
+        scanf("%d", &v1[i]);
+    }
+    for (int i = 0; i < m; i++) {
+        scanf("%d", &v2[i]);
+    }
+    int i = 0, j = 0;
+    while (true) {
+        if (i == n || j == m) break;
+        if (v1[i] < v2[j]) {
+            v3[i+j] = v1[i];
+            i++;
+            continue;
+        } else {
+            v3[i+j] = v2[j];
+            j++;
+            continue;
+        }
+    }
+    if (i == n) {
+        for (int x = j; x < m; x++) {
+            v3[i+x] = v2[x];
+        }
+    } else {
+        for (int x = i; x < n; x++) {
+            v3[j+x] = v1[x]; 
+        }
+    }
+    for (int x = 0; x < n+m; x++) {
+        printf("%d ", v3[x]);
+    }
+    return 0;
+}
