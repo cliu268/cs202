@@ -26,3 +26,21 @@ Sample output:
 
 time limit: 1000  memory limit: 65536
 */
+// DFS solution can be found in cs201 hw4 q1.cpp
+// https://github.com/cliu268/cs201/blob/main/hw4/q1.cpp
+// BFS solution will be implemented below
+#include <iostream>
+#include <stdio.h>
+#include <algorithm>
+#include <vector>
+#include <queue>
+#include <map>
+#include <set>
+using namespace std;
+
+int dx[8] = {0, 0, 1, -1, 0, 0, 2, -2};
+int dy[8] = {1, -1, 0, 0, 2, -2, 0, 0};
+
+int main(void) {
+    return 0;
+}
