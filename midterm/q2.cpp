@@ -1,4 +1,4 @@
-// Q2 Why Did the Cow Cross the Road
+// Q2 Why Did the Cow Cross the Road https://xjoi.net/contest/3944
 /*
 While the age-old question of why chickens cross roads has been addressed in great depth by the scientific community, 
 surprisingly little has been published in the research literature on the related subject of cow crossings. Farmer John, 

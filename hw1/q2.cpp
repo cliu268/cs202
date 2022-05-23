@@ -1,4 +1,4 @@
-// Q2 Numbers of 0 and 1
+// Q2 Numbers of 0 and 1 https://xjoi.net/contest/3778
 /*
 Time：1s   Memory：32M
 Description：

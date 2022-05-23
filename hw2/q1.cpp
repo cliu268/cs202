@@ -1,7 +1,7 @@
-// Q1 The Number Game of Little Fish
+// Q1 A Number Game of Little Fish https://xjoi.net/contest/3790
 /*
 Title Description
-Fish was recently asked to play a number game, asking him to remember a string of numbers he saw (The length is not 
+A little fish was recently asked to play a number game, asking him to remember a string of numbers he saw (The length is not 
 necessarily 0, the maximum length is not more than 1000000, and the number is not more than 2 ^ 32-1), and then read 
 them back (the number 0 for the end should not be read out). It's too hard for the little fish to remember. You don't 
 want to think about how big the whole head of the little fish is. Some of them are delicious meat! So please help the 

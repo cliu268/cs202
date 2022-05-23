@@ -1,4 +1,4 @@
-// Q4 Catch the Cow
+// Q4 Catch the Cow https://xjoi.net/contest/3944
 /*
 Description:
 Farmer John has been informed of the location of the escaped cow and hopes to catch it. He starts at point N (0≤N≤100,000) 

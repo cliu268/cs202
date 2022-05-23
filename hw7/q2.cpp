@@ -1,4 +1,4 @@
-// Q2 Chess Game
+// Q2 Chess Game https://xjoi.net/contest/4007
 /*
 Description：
 There are 8 black chesses and 8 white chesses on a 4x4 chessboard. The 2 chesses are "neighboring" if their positions share a 

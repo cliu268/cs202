@@ -1,4 +1,4 @@
-// Q5 A Strange Auction
+// Q5 A Strange Auction https://xjoi.net/contest/3944
 /*
 A strange auction starts from the highest price w. If no one bids, the price will be dropped by either a or b. Count the 
 total number of ways a price can drop from w to p.

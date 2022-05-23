@@ -1,4 +1,4 @@
-// Q4 Labyrinth
+// Q4 Labyrinth https://xjoi.net/contest/3888
 /*
 The mouse walks the labyrinth, the labyrinth is the square of the side N, from the upper left corner(entrance )to the 
 lower right corner ( exit), it is not allowed to go back, ask for the length of the shortest path and the number of the 

@@ -1,4 +1,4 @@
-// Q3 Word Ladder
+// Q3 Word Ladder https://xjoi.net/contest/3847
 /*
 Description:
 You have a dictionary with N words. There are one start word and one target word (the target word is the also last word). 

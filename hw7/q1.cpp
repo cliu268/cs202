@@ -1,4 +1,4 @@
-// Q1 Maze
+// Q1 Maze https://xjoi.net/contest/4007
 /*
 Description
 Given a maze.There are some obstacles cannot be passed in the maze,please calculate the ways you can move from the top left 

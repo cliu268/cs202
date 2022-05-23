@@ -1,4 +1,4 @@
-// Q1 Friendship Circle
+// Q1 Friendship Circle https://xjoi.net/contest/3778
 /*
 Problem Statement:
 There are n students in class. Some of them are friends, and some of them are not. Friendship has transitivity. For example, if A is B's 

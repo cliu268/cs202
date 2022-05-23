@@ -1,4 +1,4 @@
-// Q2 Chess Eight
+// Q2 Chess Eight https://xjoi.net/contest/3888
 /*
 Time：1s.   Memory：512M
 

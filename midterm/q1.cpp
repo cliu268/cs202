@@ -1,4 +1,4 @@
-// Q1 Machine Translation
+// Q1 Machine Translation https://xjoi.net/contest/3944
 /*
 We have a machine translation software that translates English articles into Chinese. The way this translation software works is 
 very simple. It scans an English article word by word, from beginning to the end.

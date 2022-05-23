@@ -1,4 +1,4 @@
-// Q1 Pouring Wine
+// Q1 Pouring Wine https://xjoi.net/contest/3888
 /*
 Time Limit：1s   Memory Limit：64M
  

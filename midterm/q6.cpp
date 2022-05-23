@@ -1,4 +1,4 @@
-// Q6 Number sequence
+// Q6 Number sequence https://xjoi.net/contest/3944
 /*
 Given a sequence of digits from 1 to N (3<=N<=9): 123...N, insert "+" for addition, "-" for subtraction, or " " for blank 
 (eg "1-2 3" means 1-23) between digits to make the expression evaluates to zero. Please write a program to print out all such 

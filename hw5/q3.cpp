@@ -1,4 +1,4 @@
-// Q3 Minimum steps in maze
+// Q3 Minimum steps in maze https://xjoi.net/contest/3917
 /*
 There's a square-shape map, where 0 means an empty cell that you can pass by, and 1 means a blocker. You are at bottom-right 
 corner. You want to go to top-left corner. You can go four directions, up, down, left, right. Please find out how many steps 

@@ -1,4 +1,4 @@
-// Q2 Multiple of N
+// Q2 Multiple of N https://xjoi.net/contest/3917
 /*
 Description:
 Write a program to find a minimum positive multiple of N for a given natural number N (1 ≤ N ≤ 4999) and M different decimal 

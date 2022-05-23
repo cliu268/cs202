@@ -1,4 +1,4 @@
-// Q2 Log analysis
+// Q2 Log analysis for a Warehouse https://xjoi.net/contest/3790
 /*
 M Shipping Company recently has to make statistics on the goods entering and leaving its warehouses. At present, the only 
 record they have is a log of container entry and exit. The log records two kinds of operations: the first type is the 
