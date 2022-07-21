@@ -24,11 +24,32 @@ Sample output:
 1
 9
 
+Sampel input2:
+15
+0 0 0 0 0 1 0 0 0 0 1 1 1 1 1
+0 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 1 1 1 1 1 1 1 1 1 1 1 1 1 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 1 0
+0 0 0 0 1 1 1 1 1 1 1 1 1 1 1
+1 1 1 0 0 0 0 0 0 0 0 0 0 0 1
+0 0 0 1 1 1 1 0 1 1 1 1 1 1 0
+0 0 1 1 1 1 1 0 0 0 0 0 0 0 0
+1 1 1 1 1 0 0 0 0 0 0 0 0 0 0
+0 0 0 1 1 1 1 1 1 0 0 1 1 1 1
+0 0 0 0 0 0 0 0 1 0 0 0 0 0 0
+1 1 1 1 1 0 0 0 0 0 1 1 1 1 1
+0 0 0 0 0 0 0 0 1 0 0 0 0 0 0
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 0
+
+Sample output2:
+12
+29
+
 time limit: 1000  memory limit: 65536
 */
 // DFS solution can be found in cs201 hw4 q1.cpp
 // https://github.com/cliu268/cs201/blob/main/hw4/q1.cpp
-// BFS solution will be implemented below
 #include <iostream>
 #include <stdio.h>
 #include <algorithm>
@@ -38,9 +59,48 @@ time limit: 1000  memory limit: 65536
 #include <set>
 using namespace std;
 
-int dx[8] = {0, 0, 1, -1, 0, 0, 2, -2};
-int dy[8] = {1, -1, 0, 0, 2, -2, 0, 0};
+int dx[4] = {0, 0, 1, -1};
+int dy[4] = {1, -1, 0, 0};
+int numpath = 0;
+int shortest = 0;
+
+void solve(vector<vector<int>> &maze, int row, int col, int len) {
+    maze[row][col] = 1;
+    if (row == maze.size() - 1 && col == maze.size() - 1) {
+        if (len == shortest) {
+            numpath += 1;
+        } else if (shortest == 0 || len < shortest) {
+            shortest = len;
+            numpath = 1;
+        }
+        maze[row][col] = 0;
+        return;
+    }
+
+    for (int i = 0; i < 4; i++) {
+        int x = row + dx[i];
+        int y = col + dy[i];
+        if (x < 0 || y < 0 || x >= maze.size() || y >= maze.size() || maze[x][y] == 1) {
+            continue;
+        }
+        solve(maze, x, y, len+1);
+    }
+    maze[row][col] = 0;
+}
 
 int main(void) {
+    int n;
+    cin >> n;
+    vector<vector<int>> maze(n);
+    for (int i = 0; i < n; i++) {
+        vector<int> row(n);
+        for (int j = 0; j < n; j++) {
+            cin >> row[j];
+        }
+        maze[i] = row;
+    }
+    solve(maze, 0, 0, 1);
+    cout << numpath << '\n';
+    cout << shortest << '\n';
     return 0;
 }
