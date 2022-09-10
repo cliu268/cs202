@@ -25,4 +25,5 @@ Sample Output：
 1 
 
 Constraints: 1<=n<=200
+Hint: you must use Dsjoint Set Union
 */

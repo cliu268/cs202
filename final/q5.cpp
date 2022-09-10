@@ -39,4 +39,5 @@ Sample output：
 
 Time limit：1000
 Memory limit：65536
+Hint: Pay attention to the claim that "Preparations for chores k (k>1) are only possible in chores 1..k-1."
 */

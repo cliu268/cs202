@@ -33,4 +33,5 @@ N
 Y
 
 Note：N<=10000，M<=200000
+Hint: to avoid timeout you need to (1) use scanf/printf, (2) apply path compression, and (3) submit with "g++ with -std=c++11" option.
 */

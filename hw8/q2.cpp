@@ -18,4 +18,5 @@ Sample input:
 
 Sample output:
 4 4 3 4
+Hint: consider reversing the direction of all edges.
 */
