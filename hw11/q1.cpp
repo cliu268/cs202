@@ -1,5 +1,7 @@
-// https://xjoi.net/contest/4208
 // Q1: Disjoint Set Union
+// https://xjoi.net/contest/4208/problem/1
+// https://www.xinyoudui.com/contest?courses=519&books=255&pages=6460&fragments=12040&problemId=8214
+// see cs300 hw9 qa.cpp for Ev answer
 /*
 Time limit：1s   Memory limit：512MB
 Description：
@@ -35,3 +37,37 @@ Y
 Note：N<=10000，M<=200000
 Hint: to avoid timeout you need to (1) use scanf/printf, (2) apply path compression, and (3) submit with "g++ with -std=c++11" option.
 */
+#include <bits/stdc++.h>
+using namespace std;
+ 
+int parents[10001];
+int GetParents(int x) {
+  if (parents[x]==x) {
+    return x;
+  }
+  int ans=GetParents(parents[x]);
+  parents[x]=ans;
+  return ans;
+}
+int main() {
+  int n,m;
+  scanf("%d %d", &n, &m);
+   
+  for (int i=0; i<n+1; i++) {
+    parents[i]=i;
+  }
+  for (int i=0; i<m; i++) {
+    int z, x, y; scanf("%d %d %d", &z, &x, &y);
+    if (z==1) {
+      parents[GetParents(x)]=GetParents(y);
+    }
+    if (z==2) {
+      if (GetParents(x)==GetParents(y)) {
+        printf("Y\n");
+      }
+      else {
+        printf("N\n");
+      }
+    }
+  }
+}
