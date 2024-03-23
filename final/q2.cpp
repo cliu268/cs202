@@ -1,4 +1,5 @@
 // Q2: Building Roads https://xjoi.net/contest/4235
+// see cs302 hw1 qd.cpp https://www.xinyoudui.com/ac/contest/7740019EE0002E10119DCD/problem/14116
 /*
 Time limit: 1.00 s
 Memory limit: 512 MB
